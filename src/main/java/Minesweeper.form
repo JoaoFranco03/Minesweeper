@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="MinesFinder">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Minesweeper">
   <grid id="27dc6" binding="painelPrincipal" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
       <xy x="20" y="20" width="800" height="600"/>
@@ -16,7 +16,7 @@
           <alignmentX value="0.0"/>
           <autoscrolls value="false"/>
           <horizontalAlignment value="0"/>
-          <text value="MinesFinder V1.0"/>
+          <text value="Minesweeper V1.2"/>
         </properties>
       </component>
       <grid id="ef868" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">

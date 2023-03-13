@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class MinesFinder extends JFrame {
+public class Minesweeper extends JFrame {
     private JPanel painelPrincipal;
     private JButton jogoFacilButton;
     private JButton jogoDificilButton;
@@ -21,7 +21,7 @@ public class MinesFinder extends JFrame {
     private TabelaRecordes recordesMedio;
     private TabelaRecordes recordesDificil;
 
-    public MinesFinder(String title) {
+    public Minesweeper(String title) {
         super(title);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setContentPane(painelPrincipal);
@@ -109,7 +109,7 @@ public class MinesFinder extends JFrame {
             oos.writeObject(recordesDificil);
             oos.close();
         } catch (IOException ex) {
-            Logger.getLogger(MinesFinder.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Minesweeper.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -124,14 +124,14 @@ public class MinesFinder extends JFrame {
                 recordesDificil = (TabelaRecordes) ois.readObject();
                 ois.close();
             } catch (IOException ex) {
-                Logger.getLogger(MinesFinder.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Minesweeper.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(MinesFinder.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Minesweeper.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
 
     public static void main(String[] args) {
-        new MinesFinder("Mines Finder").setVisible(true);
+        new Minesweeper("Minesweeper").setVisible(true);
     }
 }

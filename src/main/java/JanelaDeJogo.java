@@ -134,6 +134,7 @@ public class JanelaDeJogo extends JFrame {
         if (campoMinado.isJogoTerminado()) {
             if (campoMinado.isJogadorDerrotado()) {
                 JOptionPane.showMessageDialog(null, "Oh, rebentou uma mina", "Perdeu!", JOptionPane.INFORMATION_MESSAGE);
+                setVisible(false);
             } else {
                 JOptionPane.showMessageDialog(null, "Parabéns. Conseguiu descobrir todas as minas em " + (campoMinado.getDuracaoJogo() / 1000) + " segundos", "Vitória", JOptionPane.INFORMATION_MESSAGE);
                 boolean novoRecorde = campoMinado.getDuracaoJogo() < recordes.getPlayerTime();

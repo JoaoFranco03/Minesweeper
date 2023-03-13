@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a28b2c82-fe94-4011-84c9-61fb702b15fc" name="Changes" comment="V1.1 (13/03/2023)">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/JanelaDeJogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JanelaDeJogo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MinesFinder.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Minesweeper.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MinesFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Minesweeper.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2MdaCrxMcUkaRbgtPB9QrTS5YhI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/joaofranco/Desktop/Universidade/Ano2/2 Semestre/Engenharia de Software/Minesweeper",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="terminal" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Play Minesweeper" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Minesweeper" />
+      <module name="minesweeper" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Minesweeper" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Minesweeper" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a28b2c82-fe94-4011-84c9-61fb702b15fc" name="Changes" comment="" />
+      <created>1678099788462</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678099788462</updated>
+      <workItem from="1678099789641" duration="6000" />
+      <workItem from="1678099813580" duration="270000" />
+      <workItem from="1678100411171" duration="658000" />
+      <workItem from="1678124937957" duration="597000" />
+      <workItem from="1678695052202" duration="7433000" />
+      <workItem from="1678703648590" duration="293000" />
+      <workItem from="1678704057432" duration="126000" />
+    </task>
+    <task id="LOCAL-00001" summary="V1.0 (06/03/2023)">
+      <created>1678100463665</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678100463665</updated>
+    </task>
+    <task id="LOCAL-00002" summary="V1.1 (13/03/2023)">
+      <created>1678697921730</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678697921730</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="V1.0 (06/03/2023)" />
+    <MESSAGE value="V1.1 (13/03/2023)" />
+    <option name="LAST_COMMIT_MESSAGE" value="V1.1 (13/03/2023)" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Minesweeper.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
