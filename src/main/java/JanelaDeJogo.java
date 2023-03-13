@@ -6,10 +6,12 @@ public class JanelaDeJogo extends JFrame {
     private JPanel painelJogo; // painel do jogo. O nome é definido no mod Design, em "field name"
     private BotaoCampoMinado[][] botoes;
     private CampoMinado campoMinado;
+    private TabelaRecordes recordes = new TabelaRecordes();
 
-    public JanelaDeJogo(CampoMinado campoMinado) {
-
+    public JanelaDeJogo(CampoMinado campoMinado, TabelaRecordes tabela) {
+        String osName = System.getProperty("os.name");
         this.campoMinado = campoMinado;
+        this.recordes = tabela;
         var nrLinhas = campoMinado.getNrLinhas();
         var nrColunas = campoMinado.getNrColunas();
         this.botoes = new BotaoCampoMinado[nrLinhas][nrColunas];
@@ -18,23 +20,25 @@ public class JanelaDeJogo extends JFrame {
         FocusListener focusListner = new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
-                setForeground(Color.BLUE);
+                var botao = (BotaoCampoMinado) e.getSource();
+                botao.setBackground(Color.WHITE);
             }
 
             @Override
             public void focusLost(FocusEvent e) {
-                setForeground(null);
+                actualizarEstadoBotoes();
             }
         };
 
-        MouseListener mouseListener= new MouseListener() {
+        MouseListener mouseListener = new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if (e.getButton() != MouseEvent.BUTTON3) {
                     return;
                 }
                 var botao = (BotaoCampoMinado) e.getSource();
-                var x = botao.getColuna(); var y = botao.getLinha();
+                var x = botao.getColuna();
+                var y = botao.getLinha();
                 var estadoQuadricula = campoMinado.getEstadoQuadricula(x, y);
                 if (estadoQuadricula == CampoMinado.TAPADO) {
                     campoMinado.marcarComoTendoMina(y, x);
@@ -42,7 +46,8 @@ public class JanelaDeJogo extends JFrame {
                     campoMinado.marcarComoSuspeita(y, x);
                 } else if (estadoQuadricula == CampoMinado.DUVIDA) {
                     campoMinado.desmarcarQuadricula(y, x);
-                } actualizarEstadoBotoes();
+                }
+                actualizarEstadoBotoes();
             }
 
             @Override
@@ -57,7 +62,8 @@ public class JanelaDeJogo extends JFrame {
 
             @Override
             public void mouseEntered(MouseEvent e) {
-
+                var btn = (BotaoCampoMinado) e.getSource();
+                btn.requestFocus();
             }
 
             @Override
@@ -80,7 +86,7 @@ public class JanelaDeJogo extends JFrame {
                 switch (e.getKeyCode()) {
                     case KeyEvent.VK_UP -> botoes[--x < 0 ? nrLinhas - 1 : x][y].requestFocus();
                     case KeyEvent.VK_DOWN -> botoes[(x + 1) % nrLinhas][y].requestFocus();
-                    case KeyEvent.VK_LEFT -> botoes[x][--y < 0 ? nrColunas - 1 :y].requestFocus();
+                    case KeyEvent.VK_LEFT -> botoes[x][--y < 0 ? nrColunas - 1 : y].requestFocus();
                     case KeyEvent.VK_RIGHT -> botoes[x][(y + 1) % nrColunas].requestFocus();
                     case KeyEvent.VK_M -> {
                         switch (campoMinado.getEstadoQuadricula(x, y)) {
@@ -89,7 +95,8 @@ public class JanelaDeJogo extends JFrame {
                             case CampoMinado.DUVIDA -> campoMinado.desmarcarQuadricula(x, y);
                         }
                         actualizarEstadoBotoes();
-                    } }
+                    }
+                }
             }
 
             @Override
@@ -105,9 +112,11 @@ public class JanelaDeJogo extends JFrame {
                 botoes[linha][coluna].addActionListener(this::acaoBotaoCampoMinado);
                 painelJogo.add(botoes[linha][coluna]);
                 botoes[linha][coluna].addActionListener(this::btnCampoMinadoActionPerformed);
+                if (!osName.startsWith("Mac")) {
+                    botoes[linha][coluna].addFocusListener(focusListner);
+                }
                 botoes[linha][coluna].addMouseListener(mouseListener);
                 botoes[linha][coluna].addKeyListener(keyListener);
-                botoes[linha][coluna].addFocusListener(focusListner);
             }
         }
         setContentPane(painelJogo);
@@ -127,6 +136,11 @@ public class JanelaDeJogo extends JFrame {
                 JOptionPane.showMessageDialog(null, "Oh, rebentou uma mina", "Perdeu!", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(null, "Parabéns. Conseguiu descobrir todas as minas em " + (campoMinado.getDuracaoJogo() / 1000) + " segundos", "Vitória", JOptionPane.INFORMATION_MESSAGE);
+                boolean novoRecorde = campoMinado.getDuracaoJogo() < recordes.getPlayerTime();
+                if (novoRecorde) {
+                    String nome = JOptionPane.showInputDialog("Introduza o seu nome");
+                    recordes.setRecorde(nome, campoMinado.getDuracaoJogo());
+                }
                 setVisible(false);
             }
         }
