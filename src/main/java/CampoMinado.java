@@ -35,23 +35,30 @@ public class CampoMinado {
     }
 
     public void revelarQuadricula(int x, int y) {
-        if (estado[x][y] < TAPADO || jogoTerminado) {
+        if (isJogoTerminado() || estado[x][y] < TAPADO) {
             return;
         }
-        if (minas[x][y] == false) {
-            estado[x][y] = contarMinasVizinhas(x, y);
-        } else {
-            estado[x][y] = REBENTADO;
-            jogoTerminado = true;
-            jogadorDerrotado = true;
-        }
         if (primeiraJogada) {
-            primeiraJogada = !primeiraJogada;
+            primeiraJogada = false;
             colocarMinas(x, y);
             instanteInicioJogo = System.currentTimeMillis();
         }
-        if (isVitoria()) {
+        if (minas[x][y]) {
+            estado[x][y] = REBENTADO;
             jogoTerminado = true;
+            jogadorDerrotado = true;
+            duracaoJogo = System.currentTimeMillis() - instanteInicioJogo;
+            return;
+        }
+
+        var numMinasVizinhas = contarMinasVizinhas(x, y);
+        estado[x][y] = numMinasVizinhas;
+        if (estado[x][y] == VAZIO) {
+            revelarQuadriculasVizinhas(x, y);
+        }
+
+        jogoTerminado = isVitoria();
+        if (jogoTerminado) {
             jogadorDerrotado = false;
             duracaoJogo = System.currentTimeMillis() - instanteInicioJogo;
         }
@@ -71,7 +78,7 @@ public class CampoMinado {
         estado[x][y] = DUVIDA;
     }
 
-    public void desmarcarMatricula(int x, int y) {
+    public void desmarcarQuadricula(int x, int y) {
         if (estado[x][y] != DUVIDA && estado[x][y] != MARCADO) {
             return;
         }
