@@ -33,4 +33,4 @@ This implementation was inspired by the Minesweeper game that comes pre-installe
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/JoaoFranco03/Minesweeper/blob/master/license) file for details.
