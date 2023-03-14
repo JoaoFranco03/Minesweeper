@@ -10,13 +10,6 @@ This is a simple implementation of the classic game Minesweeper using Java. The 
 
 To run this program, you must have Java 19 or higher installed on your machine. You can download the latest version of Java from the [official Java website](https://www.java.com/en/download/).
 
-### Installing
-
-1. Clone this repository to your local machine.
-2. Navigate to the root directory of the project.
-3. Compile the Java files by running `javac *.java` in the terminal or command prompt.
-4. Run the program by typing `java Minesweeper` in the terminal or command prompt.
-
 ## Playing the Game
 
 The game board consists of a grid of squares. Each square can either be empty or contain a mine. The game starts with all squares hidden. 
